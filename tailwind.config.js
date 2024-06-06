@@ -8,9 +8,16 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "background_landing": "url('/public/images/background_landing.jpg')",
+      },
+      colors: {
+        blue: "#0d68ae",
+        slate_white: "#94a3b8",
+        magic_red: "#dc2626",
+        amber: "#f59e0b",
+        yellow: "#fde047",
+        navy_blue: "#0e0282",
+        green:'#008000',
       },
     },
   },

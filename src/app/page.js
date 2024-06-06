@@ -1,113 +1,79 @@
 import Image from "next/image";
+import Link from "next/link";
 
+const iconName = document.querySelector(".navbar-links");
+
+function toggle_navbar(e) {
+  e.name = e.name === "menu" ? "close" : "menu";
+  iconName.classList.toggle("top-[15%]");
+}
 export default function Home() {
+  
+    
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
+    <div class="bg-background_landing bg-cover bg-center">
+      <div
+        class="relative bg-blue bg-opacity-90 py-5 md:min-h-[100vh] min-h-[80vh]"
+      >
+        <nav
+          class="flex items-center md:justify-evenly justify-between w-[90%] mx-auto"
+        >
+          <div class="">
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              class="w-400"
+              src="https://websitedemos.net/learndash-academy-02/wp-content/uploads/sites/457/2019/06/learn-dash-white-logo.svg"
+              alt="Logo"
+              width={200}
+              height={200}
             />
-          </a>
-        </div>
+          </div>
+          <div
+            class="navbar-links md:static absolute top-[-100%] left-0 md:w-auto w-full flex items-center md:bg-transparent bg-white md:text-white text-black md:font-semibold"
+          >
+            <ul
+              class="flex md:flex-row flex-col md:items-center gap-[2vh] md:py-0 py-3 md:w-auto w-[1000vh] z-50"
+            >
+              <li
+                class="md:px-0 px-5 md:text-none md:text-white text-navy_blue"
+              >
+                <a class="" href="#">Home</a>
+              </li>
+              <hr class="md:w-[100%] md:hidden" />
+              <li class="md:px-0 px-5"><a href="#">All Courses</a></li>
+              <hr class="md:w-[100%] md:hidden" />
+              <li class="md:px-0 px-5"><a href="#">About</a></li>
+              <hr class="md:w-[100%] md:hidden" />
+              <li class="md:px-0 px-5"><a href="#">Contact</a></li>
+              <hr class="md:w-[100%] md:hidden" />
+              <li class="md:px-0 px-5"><a href="#">My Account</a></li>
+            </ul>
+          </div>
+          <div class="md:hidden flex bg-white h-[5vh] rounded items-center">
+            <ion-icon
+              onclick={toggle_navbar(this)}
+              name="menu"
+              class="md:hidden text-3xl cursor-pointer"
+            ></ion-icon>
+          </div>
+        </nav>
+        <section
+          class="flex flex-col gap-[2vh] relative md:mt-[13%] mt-[10%] items-center text-white"
+        >
+          <div class="md:text-5xl text-3xl font-bold">
+            Learn from Industry Experts
+          </div>
+          <p class="md:w-[60%] w-[80%] text-center">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum
+            dolor sit amet consectetur, adipisicing elit. Dignissimos, sit
+            aperiam quae velit officia
+          </p>
+          <button
+            class="rounded-l-[40px] rounded-r-[40px] w-auto px-5 mt-[50px] py-2 text-blue bg-white hover:bg-slate_white"
+          >
+            View All Courses
+          </button>
+        </section>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
 }
