@@ -9,7 +9,6 @@ const Home = () => {
       <HeroSection />
       <CardSection />
       <MostPopular />
-
     </div>
   );
 };

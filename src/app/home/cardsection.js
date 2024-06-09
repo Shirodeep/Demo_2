@@ -16,7 +16,7 @@ const CardSection = () => {
     },
   ]
   return (
-    <div className="bg-black">
+    <div className="">
       <CardComponent data={data} />
     </div>
   );
