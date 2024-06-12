@@ -1,5 +1,7 @@
 import React from "react";
 
+
+// takes 3 data {title, description}
 const CardComponent = ({ data }) => {
   data.map((item, index) => {
     console.log(item.title);
